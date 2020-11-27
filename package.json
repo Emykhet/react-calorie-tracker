@@ -1,5 +1,9 @@
 {
   "name": "react-calorie-tracker",
+  "description": "Calorie Tracking App",
+  "author": "Emykhet Akhu",
+  "license": "MIT",
+  "main": "index.js",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +15,7 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
