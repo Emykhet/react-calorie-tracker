@@ -22,4 +22,14 @@ export const generateItemWithIdFunc = (model) =>{
     return {id, ...model }
 }
 //_______________________________
+export const updateItemByIdFunc = (model, array) =>{
+    const updatedMeals = array.map(arrayItem => {
+        if(arrayItem.id === model.id) {
+            return model
+        }
+        return arrayItem
+    }) 
+    return updatedMeals
+}
+//_______________________________
 
