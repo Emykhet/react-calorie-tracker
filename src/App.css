@@ -3,3 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.row.form {
+  height: 20vh;
+}
+
+.meal-item{
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+}
+
+li{
+  list-style: none;
+  padding: .5rem 0;
+}
+
+button{
+  padding: .2rem 1rem;
+  cursor: pointer;
+}
