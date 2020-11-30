@@ -7,6 +7,11 @@ import Meal from "./Meal"
 const Meals = () => {
     const {state, dispatch} = useContext(StateContext)
     const {meals} = state
+    let totalArray, total
+
+    if(meals.length > 0) totalArray = meals.map(el => el.calories)
+    const addFunc = (a, b) => a + b
+    if(meals.length > 0) total = totalArray.reduce(addFunc)
     return (
         <div>
              {meals.map(meal=>(
@@ -18,6 +23,10 @@ const Meals = () => {
                  calories={meal.calories}
                  />
              ))}
+             <div className="meal-item">
+                <li className="meal-item-item">Total Calories</li>
+                <li className="meal-item-item">{total}</li>
+             </div>
         </div>
     )
 }

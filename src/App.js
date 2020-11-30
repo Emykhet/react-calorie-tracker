@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useState } from "react"
+import React, { useContext, useEffect, useReducer, useState } from "react"
 import StateContext from "./stateContext"
 import stateReducer from "./stateReducer"
 import {SHOW_FORM} from "./stateActionTypes"
@@ -15,8 +15,17 @@ import "./App.css"
 function App() {
   /**************** State  ****************/
   const initialState = useContext(StateContext)
-  const [state, dispatch] = useReducer(stateReducer, initialState)
+  const [state, dispatch] = useReducer(stateReducer, initialState, ()=>{
+    const localData = localStorage.getItem("state")
+    return localData ? JSON.parse(localData) : initialState
+  })
+
   const {showForm} = state
+
+  /**************** Side Effects  ****************/
+  useEffect(()=>{
+    localStorage.setItem("state", JSON.stringify(state))
+  },[state] )
 
   /**************** Handlers ****************/
   //  show form on click. Dispatch controlled state

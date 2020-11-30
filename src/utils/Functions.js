@@ -29,6 +29,10 @@ export const updateItemByIdFunc = (model, array) =>{
     }) 
     return updatedMeals
 }
+export const deleteItemByIdFunc = (id, array) =>{
+    const updatedMeals = array.filter(arrayItem => arrayItem.id !== id) 
+    return updatedMeals
+}
 
 
 
